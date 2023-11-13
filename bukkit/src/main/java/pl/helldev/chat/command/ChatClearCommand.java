@@ -1,5 +1,6 @@
 package pl.helldev.chat.command;
 
+import cc.dreamcode.command.annotations.RequiredPermission;
 import cc.dreamcode.command.bukkit.BukkitCommand;
 import cc.dreamcode.utilities.builder.MapBuilder;
 import eu.okaeri.injector.annotation.Inject;
@@ -11,6 +12,7 @@ import pl.helldev.chat.config.MessageConfig;
 
 import java.util.List;
 
+@RequiredPermission(permission = "helldev.chat.clear")
 public class ChatClearCommand extends BukkitCommand {
 
     private @Inject MessageConfig messageConfig;
