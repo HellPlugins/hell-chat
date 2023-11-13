@@ -109,8 +109,10 @@ public class ChatHandleUtility {
     }
 
     private void clearMessages() {
-        for (int i = 0; i < 30; i++) {
-            Bukkit.broadcastMessage("");
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            for (int i = 0; i < 50; i++) {
+                player.sendMessage("");
+            }
         }
     }
 

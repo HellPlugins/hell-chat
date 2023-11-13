@@ -16,64 +16,153 @@ public class MenuConfig extends OkaeriConfig {
     public BukkitMenuBuilder chatMenu = new BukkitMenuBuilder("HellDev - ChatManager",
             3,
             new MapBuilder<Integer, ItemStack>()
-                    .put(0, new ItemBuilder(XMaterial.APPLE.parseItem())
-                            .setName("&c&lHellDev")
-                            .setLore("&eHeellldevik")
+                    .put(0, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(1, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(2, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(3, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(5, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(6, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(7, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(8, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(9, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(11, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(13, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(15, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(17, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(18, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(19, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(20, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(21, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(22, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(23, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(24, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(25, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
+                            .toItemStack())
+                    .put(26, new ItemBuilder(XMaterial.RED_STAINED_GLASS_PANE.parseItem())
+                            .setName("&c&lHell&f&lDev")
+                            .setLore("&ediscord.gg/helldev")
                             .toItemStack())
                     .build());
 
+
     @Comment("Wyglad itemu ktory wlacza czat.")
-    public ItemStack onItem = ItemBuilder.of(XMaterial.PAPER.parseMaterial())
-            .setName("On")
+    public ItemStack onItem = ItemBuilder.of(XMaterial.GREEN_DYE.parseMaterial())
+            .setName("&aON")
             .setLore(
-                    "Kliknij aby wlaczyc czat"
+                    "&8Kliknij aby wlaczyc czat"
             )
+            .fixColors()
             .toItemStack();
 
     @Comment("Slot na ktorym ma wyswietlac item od wlaczania czatu:")
-    public int onSlot = 5;
+    public int onSlot = 10;
 
     @Comment("Wyglad itemu ktory wylacza czat.")
-    public ItemStack offItem = ItemBuilder.of(XMaterial.PAPER.parseMaterial())
-            .setName("Off")
+    public ItemStack offItem = ItemBuilder.of(XMaterial.RED_DYE.parseMaterial())
+            .setName("&4OFF")
             .setLore(
-                    "Kliknij aby wylaczyc czat"
+                    "&8Kliknij aby wylaczyc czat"
             )
+            .fixColors()
             .toItemStack();
 
     @Comment("Slot na ktorym ma wyswietlac item od wylaczania czatu::")
-    public int offSlot = 5;
+    public int offSlot = 12;
 
     @Comment("Wyglad itemu ktory przelacza czat w tryb premium.")
     public ItemStack premiumItem = ItemBuilder.of(XMaterial.DIAMOND.parseMaterial())
-            .setName("Premium")
+            .setName("&6PREMIUM")
             .setLore(
-                    "Kliknij aby przelaczyc czat w tryb premium"
+                    "&8Kliknij aby przelaczyc czat w tryb premium"
 
             )
+            .fixColors()
             .toItemStack();
 
     @Comment("Slot na ktorym ma wyswietlac item od wlaczania czatu w trybie premium:")
-    public int premiumSlot = 5;
+    public int premiumSlot = 14;
 
     @Comment("Wyglad itemu ktory czysci czat.")
     public ItemStack clearItem = ItemBuilder.of(XMaterial.DIAMOND_SWORD.parseMaterial())
-            .setName("Wyczysc czat:")
+            .setName("&7CLEAR:")
             .setLore(
-                    "Kliknij aby wyczyscic czat"
+                    "&aKliknij aby wyczyscic czat"
             )
+            .fixColors()
             .toItemStack();
 
     @Comment("Slot na ktorym ma wyswietlac item od czyszczenia czatu:")
-    public int clearSlot = 5;
-
+    public int clearSlot = 16;
 
     @Comment("Wyglad itemu ktory pokazuje status czatu.")
     public ItemStack informItem = ItemBuilder.of(XMaterial.PAPER.parseMaterial())
-            .setName("Status czatu:")
+            .setName("&aStatus czatu:")
             .setLore(
-                    "&eStatus: &7{status}"
+                    "&eStatus: {status}"
             )
+            .fixColors()
             .toItemStack();
 
     @Comment("Slot na ktorym ma wyswietlac status czatu:")

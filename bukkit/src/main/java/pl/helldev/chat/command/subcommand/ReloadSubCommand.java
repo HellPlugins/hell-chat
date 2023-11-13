@@ -3,7 +3,9 @@ package pl.helldev.chat.command.subcommand;
 import cc.dreamcode.command.annotations.RequiredPermission;
 import cc.dreamcode.command.bukkit.BukkitCommand;
 import eu.okaeri.configs.exception.OkaeriException;
+import eu.okaeri.injector.annotation.Inject;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.bukkit.command.CommandSender;
 import pl.helldev.chat.config.MenuConfig;
 import pl.helldev.chat.config.MessageConfig;
@@ -14,23 +16,17 @@ import java.util.List;
 @RequiredPermission(permission = "helldev.chat.reload")
 public class ReloadSubCommand extends BukkitCommand {
 
-    private final MenuConfig menuConfig;
-    private final MessageConfig messageConfig;
-    private final PluginConfig pluginConfig;
+    private @Inject MessageConfig messageConfig;
+    private @Inject PluginConfig pluginConfig;
 
-    public ReloadSubCommand(MenuConfig menuConfig, MessageConfig messageConfig, PluginConfig pluginConfig) {
+    public ReloadSubCommand() {
         super("reload");
-
-        this.messageConfig = messageConfig;
-        this.menuConfig = menuConfig;
-        this.pluginConfig = pluginConfig;
     }
 
     @Override
     public void content(@NonNull CommandSender sender, @NonNull String[] args) {
         try {
 
-            menuConfig.load();
             messageConfig.load();
             pluginConfig.load();
 

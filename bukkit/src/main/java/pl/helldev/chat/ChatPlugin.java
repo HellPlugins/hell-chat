@@ -10,23 +10,19 @@ import cc.dreamcode.platform.bukkit.DreamBukkitPlatform;
 import cc.dreamcode.platform.bukkit.component.CommandComponentResolver;
 import cc.dreamcode.platform.bukkit.component.ConfigurationComponentResolver;
 import cc.dreamcode.platform.bukkit.component.ListenerComponentResolver;
-import cc.dreamcode.platform.bukkit.component.RunnableComponentResolver;
 import cc.dreamcode.platform.component.ComponentManager;
-import cc.dreamcode.platform.persistence.DreamPersistence;
 import pl.helldev.chat.command.ChatClearCommand;
 import pl.helldev.chat.command.ChatCommand;
-import pl.helldev.chat.config.MenuConfig;
 import pl.helldev.chat.config.MessageConfig;
 import pl.helldev.chat.config.PluginConfig;
 
 import eu.okaeri.configs.serdes.OkaeriSerdesPack;
-import eu.okaeri.configs.yaml.bukkit.serdes.SerdesBukkit;
-import eu.okaeri.tasker.bukkit.BukkitTasker;
 import lombok.Getter;
 import lombok.NonNull;
+import pl.helldev.chat.controller.ChatController;
 import pl.helldev.chat.gui.ChatMenuHolder;
 
-public final class ChatPlugin extends DreamBukkitPlatform implements DreamBukkitConfig, DreamPersistence {
+public final class ChatPlugin extends DreamBukkitPlatform implements DreamBukkitConfig {
 
     @Getter private static ChatPlugin chatPlugin;
 
@@ -38,13 +34,11 @@ public final class ChatPlugin extends DreamBukkitPlatform implements DreamBukkit
     @Override
     public void enable(@NonNull ComponentManager componentManager) {
 
-        this.registerInjectable(BukkitTasker.newPool(this));
         this.registerInjectable(BukkitMenuProvider.create(this));
         this.registerInjectable(BukkitCommandProvider.create(this, this.getInjector()));
 
         componentManager.registerResolver(CommandComponentResolver.class);
         componentManager.registerResolver(ListenerComponentResolver.class);
-        componentManager.registerResolver(RunnableComponentResolver.class);
 
         componentManager.registerResolver(ConfigurationComponentResolver.class);
         componentManager.registerComponent(MessageConfig.class, messageConfig ->
@@ -54,14 +48,13 @@ public final class ChatPlugin extends DreamBukkitPlatform implements DreamBukkit
                 }));
 
         componentManager.registerComponent(PluginConfig.class);
-        componentManager.registerComponent(MenuConfig.class);
 
         componentManager.registerComponent(ChatMenuHolder.class);
 
         componentManager.registerComponent(ChatCommand.class);
         componentManager.registerComponent(ChatClearCommand.class);
 
-        componentManager.registerComponent(ChatCommand.class);
+        componentManager.registerComponent(ChatController.class);
 
     }
 
@@ -79,11 +72,6 @@ public final class ChatPlugin extends DreamBukkitPlatform implements DreamBukkit
             registry.register(new BukkitNoticeSerdes());
             registry.register(new MenuBuilderSerdes());
         };
-    }
-
-    @Override
-    public @NonNull OkaeriSerdesPack getPersistenceSerdesPack() {
-        return registry -> registry.register(new SerdesBukkit());
     }
 
 }

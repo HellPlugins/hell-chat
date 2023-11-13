@@ -3,6 +3,7 @@ package pl.helldev.chat.command;
 import cc.dreamcode.command.annotations.RequiredPermission;
 import cc.dreamcode.command.annotations.RequiredPlayer;
 import cc.dreamcode.command.bukkit.BukkitCommand;
+import eu.okaeri.injector.annotation.Inject;
 import lombok.NonNull;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
@@ -12,16 +13,14 @@ import pl.helldev.chat.gui.ChatMenuHolder;
 import java.util.Collections;
 import java.util.List;
 
-@RequiredPermission(permission = "helldev.chat")
 @RequiredPlayer
+@RequiredPermission(permission = "helldev.chat")
 public class ChatCommand extends BukkitCommand {
 
-    private final ChatMenuHolder menuHolder;
+    private @Inject ChatMenuHolder menuHolder;
 
-    public ChatCommand(ChatMenuHolder menuHolder) {
+    public ChatCommand() {
         super("chat", "c");
-
-        this.menuHolder = menuHolder;
 
         this.registerSubcommand(ReloadSubCommand.class);
     }

@@ -17,28 +17,26 @@ public class ChatController implements Listener {
     private final PluginConfig pluginConfig;
     private final MessageConfig messageConfig;
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerChat(AsyncPlayerChatEvent event) {
         ChatState chatState = pluginConfig.chatState;
 
-        handleOff(chatState, event);
-        handlePremium(chatState, event);
+        if (chatState == ChatState.OFF) handleOff(event);
+        if (chatState == ChatState.PREMIUM) handlePremium(event);
     }
 
-    private void handleOff(ChatState chatState, AsyncPlayerChatEvent event) {
+    private void handleOff(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
 
-        if (chatState != ChatState.OFF) return;
         if (player.hasPermission(pluginConfig.offPermission)) return;
 
         event.setCancelled(true);
         messageConfig.chatIsOff.send(player);
     }
 
-    private void handlePremium(ChatState chatState, AsyncPlayerChatEvent event) {
+    private void handlePremium(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
 
-        if (chatState != ChatState.PREMIUM) return;
         if (player.hasPermission(pluginConfig.premiumPermission)) return;
 
         event.setCancelled(true);

@@ -60,7 +60,7 @@ public class ChatMenu implements BukkitMenuPlayerSetup {
 
         return ItemBuilder.of(menuConfig.informItem)
                 .fixColors(new MapBuilder<String, Object>()
-                        .put("state", stateText)
+                        .put("status", stateText)
                         .build()).toItemStack();
     }
 }
