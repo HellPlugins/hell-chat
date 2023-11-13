@@ -7,7 +7,7 @@ plugins {
 
 allprojects {
     group 'pl.helldev.chat'
-    version '1.0-InDEV'
+    version '1.0'
 
     apply plugin: 'java-library'
     apply plugin: 'checkstyle'
