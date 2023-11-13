@@ -1,11 +1,6 @@
-Working with template:
+# HellDev-Chat:
 -----
-Clone this repo to your account, rename package name, then by pressing ``CTRL + SHIFT + R`` change all variables to your plugin name. (Template --> PluginName).
-
-Finally, remove all **unnecessary** template functions.
-(support mc versions can easily be removed by deleting implement in settings.gradle)
-
-Build to jar by ``shadowJar`` gradle task.
+Plugin na zarzadzanie czatem w GUI.
 
 **Required:**
 -----
